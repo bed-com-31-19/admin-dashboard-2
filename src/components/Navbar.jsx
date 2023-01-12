@@ -23,7 +23,7 @@ import {
 } from "@mui/material";
 import FlexBetween from "./FlexBetween";
 
-const Navbar = () => {
+const Navbar = ({ isSidebarOpen, setIsSidebarOpen }) => {
   const dispatch = useDispatch();
   const theme = useTheme();
   return (
@@ -41,7 +41,8 @@ const Navbar = () => {
       >
         {/* LEFT SIDE */}
         <FlexBetween>
-          <IconButton>
+          <IconButton onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
+            {" "}
             <MenuIcon></MenuIcon>
           </IconButton>
           <FlexBetween
@@ -70,10 +71,10 @@ const Navbar = () => {
             ) : (
               <LightModeOutlined sx={{ fontSize: "25px" }} />
             )}
-                  </IconButton>
-                  <IconButton>
-                      <SettingsOutlined/>
-                  </IconButton>
+          </IconButton>
+          <IconButton>
+            <SettingsOutlined />
+          </IconButton>
         </FlexBetween>
       </Toolbar>
     </AppBar>
