@@ -52,7 +52,7 @@ const Navbar = () => {
           >
             <InputBase
               sx={{
-                maxWidth: "7em",
+                maxWidth: "8em",
               }}
               placeholder="Search..."
             />
